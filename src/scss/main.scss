@@ -1,0 +1,34 @@
+//SETTINGS
+@import "settings/_breakpoints.scss";
+@import "settings/_colors.scss";
+@import "settings/_sizes.scss";
+
+
+//TOOLS
+@import "tools/_mediaQueries.scss";
+
+
+//GENERAL
+@import "general/_general.scss";
+
+
+//COMPONENTS
+@import "components/_country-cover-img.scss";
+@import "components/_country-cover-title.scss";
+@import "components/_gallery-img.scss";
+@import "components/_gallery-text.scss";
+@import "components/_info-img.scss";
+@import "components/_info-section.scss";
+@import "components/_info-text.scss";
+@import "components/_landing-img.scss";
+@import "components/_landing-title.scss";
+@import "components/_menu-button.scss";
+@import "components/_menu-close-button.scss";
+@import "components/_menu-list.scss";
+
+
+//MODULES
+@import "modules/_countryCover.scss";
+@import "modules/_info.scss";
+@import "modules/_landing.scss";
+@import "modules/_menu.scss";

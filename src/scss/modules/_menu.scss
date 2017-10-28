@@ -1,0 +1,18 @@
+.menu {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-in;
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+    overflow: scroll;
+  }
+}

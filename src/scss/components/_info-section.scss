@@ -1,0 +1,18 @@
+.info-section {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+}
+
+
+.info-section--left {
+  left: 0;
+  border-right: 3px solid black;
+}
+
+
+.info-section--right {
+  right: 0;
+  border-left: 3px solid black;
+}
