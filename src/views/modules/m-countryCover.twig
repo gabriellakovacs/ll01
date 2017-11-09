@@ -1,0 +1,14 @@
+<section class="countryCover" id="{{ countryCover.title|replace({ ' ' : '' }) }}">
+
+  {# COUNTRY COVER TITLE #}
+  {% include "views/components/countryCover/countryCoverTitle.twig" with { 'title' : countryCover.title } %}
+
+  {# COUNTRY COVER IMG #}
+  {% include "views/components/countryCover/countryCoverImg.twig" with { 'img' : countryCover.image } %}
+
+  {# GALLERY #}
+  {% if countryCover.gallery|length %}
+    {% include "views/components/gallery/gallery.twig" with { 'gallery' : countryCover.gallery } %}
+  {% endif %}
+
+</section>

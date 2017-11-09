@@ -1,0 +1,5 @@
+{# CHOOSE RANDOM IMAGE #}
+{% set randomImg = random(images) %}
+
+<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img js-landing-img">
+<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img js-landing-img landing-img-hover">

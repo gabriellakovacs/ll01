@@ -1,0 +1,48 @@
+{% set prevWasHalf = false %}
+{% set darkBackground = false %}
+
+{% for item in gallery %}
+
+  {% if item.type == "fullImage" or item.type == "halfImage" %}
+    {% if item.whiteCursor %}
+    {% set classIndicatingBackground = 'js-dark-background' %}
+    {% else %}
+    {% set classIndicatingBackground = '' %}
+    {% endif %}
+  {% endif %}
+
+  {% if item.type == "fullImage" %}
+
+    {% set backgroundImg = 'background-image: url(' ~ item.fullImage.first().url ~ ');'  %}
+
+    <div class="gallery-item gallery-item--full js-galleryItem js-galleryItem--full {{ classIndicatingBackground }}">
+      <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}"></div>
+    </div>
+
+    {% set prevWasHalf = false %}
+
+  {% elseif item.type == "halfImage" %}
+
+    {% set backgroundImg = 'background-image: url(' ~ item.halfImage.first().url ~ ');'  %}
+
+    {% if prevWasHalf %}
+    {% set side = 'right' %}
+    {% set prevWasHalf = false %}
+    {% else %}
+    {% set side = 'left' %}
+    {% set prevWasHalf = true %}
+    {% endif %}
+
+    <div class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem js-galleryItem--half {{ classIndicatingBackground }}">
+      <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}"></div>
+    </div>
+
+  {% elseif item.type == "text" %}
+
+    <div class="gallery-item gallery-item--half js-galleryItem js-galleryItem--half">
+      <p class="gallery-text">{{ item.text }}</p>
+    </div>
+
+  {% endif %}
+
+{% endfor %}

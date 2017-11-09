@@ -1,0 +1,21 @@
+{% set info = craft.entries.section('info')[0] %}
+
+{% if (side == 'left') %}
+{% set text = info.textLeft  %}
+{% set image = info.imageLeft.first() %}
+{% elseif (side == 'right') %}
+{% set text = info.textRight  %}
+{% set image = info.imageRight.first() %}
+{% endif %}
+
+
+
+<div class="info-section info-section--{{ side }}">
+
+  {# INFO IMG #}
+  {% include "views/components/info/infoImg.twig" with { 'image' : image } %}
+
+  {# INFO TEXT #}
+  {% include "views/components/info/infoText.twig" with { 'text' : text, 'side' : side } %}
+
+</div>
