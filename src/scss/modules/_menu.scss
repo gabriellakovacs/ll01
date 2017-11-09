@@ -4,15 +4,18 @@
   top: 0;
   left: 0;
   width: 100vw;
+  overflow-y: scroll;
   min-height: 100vh;
-  background: white;
-  opacity: 0;
+  background: #ffffff;
+  transform: translateY(100vh);
   pointer-events: none;
-  transition: 0.5s ease-in;
+  transition: transform 0.4s cubic-bezier(0,.14,.55,.99);
 
   &.open {
     opacity: 1;
+    transform: translateY(0);
     pointer-events: auto;
     overflow: scroll;
+    transition: transform 0.4s cubic-bezier(0,.14,.55,.99);
   }
 }

@@ -1,0 +1,42 @@
+.gallery-navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  &.active {
+    .galleryPrev { height: 100vh; }
+    .galleryNext { height: 100vh; }
+  }
+}
+
+
+.galleryPrev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 0vh;
+  cursor: url('../img/cursor/galleryPrevSmall.png') 31 16, url('../img/cursor/galleryPrevSmall.cur'), pointer;
+  opacity: 0;
+
+  &.white-cursor {
+    cursor: url('../img/cursor/galleryPrevSmallWhite.png') 31 16, pointer;
+  }
+}
+
+
+.galleryNext {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 0vh;
+  cursor: url('../img/cursor/galleryNextSmall.png') 1 16, url('../img/cursor/galleryNextSmall.cur'), pointer;
+  opacity: 0;
+
+  &.white-cursor {
+    cursor: url('../img/cursor/galleryNextSmallWhite.png') 31 16, pointer;
+  }
+}

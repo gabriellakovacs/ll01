@@ -1,4 +1,16 @@
 .info-text {
   font-family: sans-serif;
   font-size: 10px;
+  padding: $sideSpacing;
+}
+
+
+.info-section--left .info-text {
+  font-size: 7vw;
+}
+
+
+.info-section--right .info-text {
+  font-size: 2vw;
+  text-align: justify;
 }

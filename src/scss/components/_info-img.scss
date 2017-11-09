@@ -8,6 +8,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: .5s ease-in;
 
   &:hover { opacity: 0; }
 }

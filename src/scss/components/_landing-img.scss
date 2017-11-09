@@ -1,9 +1,9 @@
 .landing-img {
   z-index: -1;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 50vw;
+  bottom: $sideSpacing;
+  left: $sideSpacing;
+  height: calc(99vh - 12vw);
 }
 
 

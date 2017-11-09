@@ -8,11 +8,11 @@
 
 .info-section--left {
   left: 0;
-  border-right: 3px solid black;
+  border-right: $sectionBorderW / 2 solid $borderColor;
 }
 
 
 .info-section--right {
   right: 0;
-  border-left: 3px solid black;
+  border-left: $sectionBorderW / 2 solid $borderColor;
 }

@@ -1,5 +1,12 @@
 .landing-title {
   z-index: 1;
-  font-size: 15vw; //TODO: check when the real font is available
-  font-family: sans-serif; //TODO: change when the real font is available
+  padding: $sideSpacing;
+  font-size: 10vw;
+  font-family: $title;
+}
+
+
+.landing-title-space {
+  display: inline-block;
+  width: 26vw;
 }

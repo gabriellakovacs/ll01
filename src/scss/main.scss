@@ -1,6 +1,7 @@
 //SETTINGS
-@import "settings/_breakpoints.scss";
 @import "settings/_colors.scss";
+@import "settings/_breakpoints.scss";
+@import "settings/_fonts.scss";
 @import "settings/_sizes.scss";
 
 
@@ -15,7 +16,9 @@
 //COMPONENTS
 @import "components/_country-cover-img.scss";
 @import "components/_country-cover-title.scss";
-@import "components/_gallery-img.scss";
+@import "components/_gallery-image.scss";
+@import "components/_gallery-item.scss";
+@import "components/_gallery-navigation.scss";
 @import "components/_gallery-text.scss";
 @import "components/_info-img.scss";
 @import "components/_info-section.scss";
@@ -29,6 +32,7 @@
 
 //MODULES
 @import "modules/_countryCover.scss";
+@import "modules/_gallery.scss";
 @import "modules/_info.scss";
 @import "modules/_landing.scss";
 @import "modules/_menu.scss";

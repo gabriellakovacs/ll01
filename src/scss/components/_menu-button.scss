@@ -1,14 +1,26 @@
 .menu-button {
   z-index: 2;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: $sideSpacing;
+  right: $sideSpacing;
   width: $closeBbutton;
   height: $closeBbutton;
 
   &:hover {
     cursor: pointer;
-    .circle--inner { border-color: white; }
+    .circle--inner { border-color: #ffffff; }
+  }
+
+}
+
+
+.menu-button.white {
+  .circle, .circle-inner {
+     border-color: #ffffff;
+  }
+
+  &:hover {
+    .circle--inner { border-color: #000000; }
   }
 
 }
@@ -18,7 +30,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  border: $closeBbutton / 2 solid black;
+  border: $closeBbutton / 2 solid #000000;
   border-radius: 60%;
 }
 
@@ -27,5 +39,12 @@
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-  border: $closeBbutton / 2 - 6px solid black;
+  border: $closeBbutton / 2 - 6px solid #000000;
+}
+
+
+.menu-button-text-wrap {
+  float: right;
+  width: calc(#{$closeBbutton} * 1.5 + #{$sideSpacing});
+  height: calc(#{$closeBbutton} * 1.5 + #{$sideSpacing});
 }

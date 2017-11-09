@@ -1,8 +1,18 @@
 .country-cover-title {
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  transform: translateY(-50%);
+  transform: translate(0, -50%);
   text-align: center;
+  font-family: $title;
+  font-size: 8vw;
+  cursor: pointer;
+  transition: transform 1s ease-out;
+}
+
+
+.country-cover-title.move-right {
+  transform: translate(100vw, -50%);
 }

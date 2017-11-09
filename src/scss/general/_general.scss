@@ -4,11 +4,28 @@
 
 
 body {
-  background: $light-gray;
+  width: 100vw;
+  background: #ffffff;
   overflow-x: hidden;
+  font-family: $text;
 }
 
 
 .hidden {
   display: none;
+}
+
+
+section {
+  height: calc(100vh + #{$sectionBorderW});
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: $sectionBorderW;
+    background: $borderColor;
+  }
 }
