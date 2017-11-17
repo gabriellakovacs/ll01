@@ -4,11 +4,6 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-
-  &.active {
-    .galleryPrev { height: 100vh; }
-    .galleryNext { height: 100vh; }
-  }
 }
 
 
@@ -24,6 +19,8 @@
   &.white-cursor {
     cursor: url('../img/cursor/galleryPrevSmallWhite.png') 31 16, pointer;
   }
+
+  &.active { height: 100vh; }
 }
 
 
@@ -39,4 +36,6 @@
   &.white-cursor {
     cursor: url('../img/cursor/galleryNextSmallWhite.png') 31 16, pointer;
   }
+
+  &.active { height: 100vh; }
 }

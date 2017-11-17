@@ -21,9 +21,6 @@ for(var i = 0; i < galleryListLength; i++) {
 
 
 function initGallery(gallery, title) {
-  console.log('init gallery');
-  console.log('gallery' + gallery);
-  console.log('init gallery' + title);
 
   var galleryNavigation = gallery.querySelector('.js-galleryNavigation');
   var galleryNavNext = gallery.querySelector('.js-galleryNext');
@@ -37,7 +34,7 @@ function initGallery(gallery, title) {
 
   //TODO: start gallery with click on title
   title.classList.add('move-right');
-  galleryNavigation.classList.add('active');
+  galleryNavNext.classList.add('active');
 
 
 
@@ -56,11 +53,13 @@ function initGallery(gallery, title) {
   );
 
   function showNextItem() {
-    console.log('show next');
-    currentItemIndex++;
-    currentItemIndex === galleryItemListLength ? currentItemIndex = 0 : true;
 
-    console.log('currentItemIndex ' + currentItemIndex);
+      currentItemIndex++;
+      currentItemIndex === galleryItemListLength ? currentItemIndex = 0 : true;
+
+      if(currentItemIndex === 0) { galleryNavPrev.classList.add('active'); }
+      if(currentItemIndex === galleryItemListLength - 1) { galleryNavNext.classList.remove('active'); }
+
 
     currentItem = galleryItemList[currentItemIndex];
 
@@ -78,7 +77,7 @@ function initGallery(gallery, title) {
         galleryNavPrev.classList.add('white-cursor');
         menuButton.classList.add('white');
       }
-      //check if the white cursor should be changes back to black
+      //check if the white cursor should be changed back to black
     } else {
       if(istHalfItem && isRightItem) {
           galleryNavNext.classList.remove('white-cursor');
@@ -92,7 +91,7 @@ function initGallery(gallery, title) {
       }
     }
 
-    //check if it's half image where we should position it
+    //if it's half image check where we should position it
     if(istHalfItem && !(isRightItem)) {
       currentItem.classList.add('activeLeft');
       isRightItem = true;
@@ -103,17 +102,24 @@ function initGallery(gallery, title) {
   }
 
   function showPrevItem() {
-    console.log('show prev');
+
+  currentItem = galleryItemList[currentItemIndex];
+
+  //if it's half image check where we should position it
+  if(currentItem.classList.contains('activeLeft')) {
+    currentItem.classList.remove('activeLeft');
+    isRightItem = false;
+  } else {
+    currentItem.classList.remove('active');
+    isRightItem = true;
+  }
+
     currentItemIndex--;
 
-    currentItemIndex < 0 ? currentItemIndex = galleryItemListLength - 1 : true;
+    if(currentItemIndex < 0) { galleryNavPrev.classList.remove('active'); }
+    if(currentItemIndex < galleryItemListLength - 1) { galleryNavNext.classList.add('active'); }
 
-    console.log('currentItemIndex ' + currentItemIndex);
-
-    currentItem = galleryItemList[currentItemIndex];
-
-    currentItem.classList.remove('activeLeft');
-    currentItem.classList.remove('active');
+    //currentItemIndex < 0 ? currentItemIndex = galleryItemListLength - 1 : true;
 
   }
 
