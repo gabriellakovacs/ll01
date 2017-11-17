@@ -45,6 +45,6 @@
 
 .menu-button-text-wrap {
   float: right;
-  width: calc(#{$closeBbutton} * 1.5 + #{$sideSpacing});
+  width: calc(#{$closeBbutton} * 2 + #{$sideSpacing});
   height: calc(#{$closeBbutton} * 1.5 + #{$sideSpacing});
 }

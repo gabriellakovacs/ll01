@@ -1,11 +1,14 @@
 {% set landing = craft.entries.section('landing')[0] %}
 
-<section class="landing">
+<section class="landing js-landing" data-section-name = "landing">
 
   {# LANDING IMG #}
   {% include "views/components/landing/landingImg.twig" with { 'images': landing.landingImages } %}
 
   {# LANDING TITLE #}
   {% include "views/components/landing/landingTitle.twig" %}
+
+  {# SCROLL NEXT#}
+  {% include "views/components/scroll/scrollNext.twig" %}
 
 </section>

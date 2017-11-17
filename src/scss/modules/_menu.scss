@@ -6,6 +6,7 @@
   width: 100vw;
   overflow-y: scroll;
   min-height: 100vh;
+  padding: $sideSpacing;
   background: #ffffff;
   transform: translateY(100vh);
   pointer-events: none;

@@ -3,14 +3,19 @@
   position: absolute;
   bottom: $sideSpacing;
   left: $sideSpacing;
-  height: calc(99vh - 12vw);
+  height: 60vh;
+  //height: calc(100vh - #{ $sideSpacing } - #{ $sideSpacing } - 11vw);//$sideSpacing - first for the img bottom pos, second for the title padding-top, 11vw is just what it takes to get he img on level with the l
+  //width: 62.3vw;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
 }
 
 
 .landing-img-hover {
   z-index: 0;
   opacity: 0;
-  transition: 0.5s ease-in;
+  //transition: 0.3s ease-out;
 
   &:hover { opacity: 1; }
 }

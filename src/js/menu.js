@@ -11,10 +11,10 @@ var menuCloseDelay = 1000;
 function openMenu() {
   menu.classList.add('open');
 
-  setTimeout(function(){
-    html.style.overflow = 'hidden';
-    body.style.overflow = 'hidden';
-  }, 800);
+  // setTimeout(function(){
+  //   html.style.overflow = 'hidden';
+  //   body.style.overflow = 'hidden';
+  // }, 800);
 }
 
 
@@ -23,8 +23,8 @@ function closeMenu() {
 
   setTimeout(function(){
     menu.classList.remove('open');
-    html.style.overflow = 'auto';
-    body.style.overflow = 'auto';
+    // html.style.overflow = 'auto';
+    // body.style.overflow = 'auto';
   }, 350);
 
   setTimeout(function(){
@@ -58,8 +58,6 @@ for (var i = 0; i < menuItemButtonListLength; i++) {
               scrollTop: target.offset().top
           }, 1000);
       }
-
-      console.log('scroll with animation');
 
       closeMenu();
     }

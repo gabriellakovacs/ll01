@@ -1,5 +1,15 @@
 {# CHOOSE RANDOM IMAGE #}
 {% set randomImg = random(images) %}
 
-<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img js-landing-img">
-<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img js-landing-img landing-img-hover">
+<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img">
+<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img landing-img-hover">
+
+{# {% set backgroundImg = 'background-image: url(' ~ randomImg.url ~ ');'  %} #}
+
+<!-- <div class="landing-img" style = "{{ backgroundImg }}">
+  {# TODO: transform image #}
+</div>
+
+<div class="landing-img landing-img-hover" style = "{{ backgroundImg }}">
+  {# TODO: transform image #}
+</div> -->
