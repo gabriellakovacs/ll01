@@ -52,7 +52,14 @@
                 class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem js-galleryItem--half"
                 data-type="half{{ side|capitalize }}{{ backgroundShade|capitalize }}"
             >
-              <p class="gallery-text gallery-text--{{ backgroundShade }}">{{ item.text }}</p>
+              <p class="gallery-text gallery-text--{{ backgroundShade }}">
+                  <span class="text--en">
+                      {{ item.text }}
+                  </span>
+                  <span class="text--de">
+                      {{ item.textDe }}
+                  </span>
+              </p>
             </div>
 
         {% endif %}

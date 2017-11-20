@@ -4,6 +4,27 @@
 
 $closeBbutton: 50px;
 
+
+
+//BORDERS
 $sectionBorderW: 6px;
 
+
+//SPACING
 $sideSpacing: 2vw;
+
+
+//FONT SIZE
+//landscape
+$landing-font-size: 10vw;
+$info-left-font-size: 7vw;
+$info-right-font-size: 2vw;
+$menu-font-size: 5vw;
+$gallery-font-size: $info-right-font-size;
+
+//portrait
+$landing-font-size--portrait: 10vh;
+$info-left-font-size--portrait: 7vh;
+$info-right-font-size--portrait: 2vh;
+$menu-font-size--portrait: 10vh;
+$gallery-font-size--portrait: $info-right-font-size--portrait;

@@ -2,9 +2,11 @@
 
 {% if (side == 'left') %}
 {% set text = info.textLeft  %}
+{% set textDe = info.textLeftDe  %}
 {% set image = info.imageLeft.first() %}
 {% elseif (side == 'right') %}
 {% set text = info.textRight  %}
+{% set textDe = info.textRightDe  %}
 {% set image = info.imageRight.first() %}
 {% endif %}
 
@@ -16,6 +18,6 @@
   {% include "views/components/info/infoImg.twig" with { 'image' : image } %}
 
   {# INFO TEXT #}
-  {% include "views/components/info/infoText.twig" with { 'text' : text, 'side' : side } %}
+  {% include "views/components/info/infoText.twig" with { 'text' : text, 'textDe' : textDe, 'side' : side } %}
 
 </div>

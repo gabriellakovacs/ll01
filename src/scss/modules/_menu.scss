@@ -3,20 +3,35 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  overflow-y: scroll;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   padding: $sideSpacing;
   background: #ffffff;
-  transform: translateY(100vh);
+  transform: translateY(100%);
   pointer-events: none;
   transition: transform 0.4s cubic-bezier(0,.14,.55,.99);
+
+  @media screen and (orientation:portrait) {
+      transform: translate(100% 0%);
+  }
 
   &.open {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-    overflow: scroll;
     transition: transform 0.4s cubic-bezier(0,.14,.55,.99);
+  }
+
+  .onhover-underline {
+      &::after {
+          bottom:  $menu-font-size / 5 * -1.5;
+          height: $menu-font-size / 5;
+          background-color: #000;
+      }
+
+      &:hover::after {
+          bottom: $menu-font-size / 5 * -1;
+      }
   }
 }

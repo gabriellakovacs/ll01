@@ -1,0 +1,22 @@
+.text--de {
+  display: none;
+}
+
+
+.language--de {
+    .text--de { display: block; }
+}
+
+
+.text--en {
+  display: none;
+}
+
+
+.language--en {
+    .text--en { display: block; }
+}
+
+.language-switch {
+    cursor: pointer;
+}
