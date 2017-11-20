@@ -1,12 +1,20 @@
 .landing-title {
   z-index: 1;
   padding: $sideSpacing;
-  font-size: 10vw;
+  font-size: $landing-font-size;
   font-family: $title;
+
+  @media screen and (orientation:portrait) {
+      font-size: $landing-font-size--portrait;
+  }
 }
 
 
 .landing-title-space {
   display: inline-block;
   width: 26vw;
+
+  @media screen and (orientation:portrait) {
+      width: 26vh;
+  }
 }

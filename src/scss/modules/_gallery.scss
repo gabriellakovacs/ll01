@@ -4,4 +4,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+
+  @media screen and (orientation:portrait) {
+      height: 100vw;
+      width: 100vh;
+  }
 }

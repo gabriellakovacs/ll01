@@ -1,16 +1,23 @@
 .info-text {
   font-family: sans-serif;
-  font-size: 10px;
   padding: $sideSpacing;
 }
 
 
 .info-section--left .info-text {
-  font-size: 7vw;
+  font-size: $info-left-font-size;
+
+  @media screen and (orientation:portrait) {
+      font-size: $info-left-font-size--portrait;
+  }
 }
 
 
 .info-section--right .info-text {
-  font-size: 2vw;
+  font-size: $info-right-font-size;
   text-align: justify;
+
+  @media screen and (orientation:portrait) {
+      font-size: $info-right-font-size--portrait;
+  }
 }

@@ -1,6 +1,10 @@
 .menu-list {
-  font-size: 10vw;
+  font-size: $menu-font-size;
   font-family: $title;
+
+  @media screen and (orientation:portrait) {
+     font-size: $menu-font-size--portrait;
+  }
 
   a {
     text-decoration: none;
