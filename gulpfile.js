@@ -36,18 +36,24 @@ gulp.task('templates', function buildHTML() {
 });
 
 
-
 gulp.task('img', function() {
    gulp.src('src/img/*')
    .pipe(gulp.dest('public/assets/img'));
 });
 
-gulp.task('renamejade', function() {
-   gulp.src('src/views/**/*.jade')
+
+gulp.task('renamepug', function() {
+   gulp.src('src/views/**/*.pug')
    .pipe(rename (function (path) {
-     path.extname = ".pug"
+     path.extname = ".twig"
    }))
-   .pipe(gulp.dest("./src/views"));
+   .pipe(gulp.dest("./src"));
+});
+
+
+gulp.task('moveToMamp', function() {
+  gulp.src('public/assets/**/*')
+  .pipe(gulp.dest('../../../../../../:c/MAMP/htdocs/assets'));
 });
 
 
