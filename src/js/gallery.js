@@ -1,44 +1,48 @@
+/*
+GALLERY
+
+The gallery has 6 types of items: halfLeftLight, halfLeftDark, halfRightLight, halfRightDark, fullLight, fullDark
+we need these types to determine whether we should change the cursor and or menu button to black or white
+*/
+
 var galleryList = document.querySelectorAll('.js-gallery');
 var galleryListLength = galleryList.length;
-var gallerySarter = document.querySelectorAll('.js-start-gallery');
+var galleryStarter = document.querySelectorAll('.js-start-gallery');
 var menuButton = document.querySelector('.js-open-menu');
+
 
 //init all galleries
 for(var i = 0; i < galleryListLength; i++) {
 
-
-  (function(j) {
-    var gallery = galleryList[j];
-    var title = gallerySarter[j];
+  (function(indexOfGallery) {
+    var gallery = galleryList[indexOfGallery];
+    var title = galleryStarter[indexOfGallery];
 
     title.onclick = function() {
       initGallery(gallery, title);
     }
   })(i);
 
-
 }
 
 
 function initGallery(gallery, title) {
 
-  var galleryNavigation = gallery.querySelector('.js-galleryNavigation');
   var galleryNavNext = gallery.querySelector('.js-galleryNext');
   var galleryNavPrev = gallery.querySelector('.js-galleryPrev');
   var galleryItemList = gallery.querySelectorAll('.js-galleryItem');
   var galleryItemListLength = galleryItemList.length;
   var currentItemIndex = -1;
   var currentItem;
-  var istHalfItem = false;
-  var isRightItem = false
+  var currentItemType;
 
-  //TODO: start gallery with click on title
+
+  //start gallery with click on title
   title.classList.add('move-right');
   galleryNavNext.classList.add('active');
 
 
-
-  //touchscreen navigation
+  //TODO: touchscreen navigation
 
 
   galleryNavNext.addEventListener(
@@ -55,72 +59,87 @@ function initGallery(gallery, title) {
   function showNextItem() {
 
       currentItemIndex++;
-      currentItemIndex === galleryItemListLength ? currentItemIndex = 0 : true;
+      currentItem = galleryItemList[currentItemIndex];
+      currentItemType = currentItem.dataset.type;
+      currentItem.classList.add('active');
 
+
+      //hide or show the navigation areas based on where we are in the gallery
       if(currentItemIndex === 0) { galleryNavPrev.classList.add('active'); }
       if(currentItemIndex === galleryItemListLength - 1) { galleryNavNext.classList.remove('active'); }
 
 
-    currentItem = galleryItemList[currentItemIndex];
+    //check if the cursor and/or the menu open button needs to be white/black because of a dark/light background
+    itemTypeBasedChanges(currentItemType);
 
-    istHalfItem = currentItem.classList.contains('gallery-item--half');
-
-    //check if the cursor and/or the menu open button needs to be white because of a dark background
-    if(currentItem.classList.contains('js-dark-background')) {
-      if(istHalfItem && isRightItem) {
-          galleryNavNext.classList.add('white-cursor');
-          menuButton.classList.add('white');
-      } else if(istHalfItem && !(isRightItem)) {
-        galleryNavPrev.classList.add('white-cursor');
-      } else {
-        galleryNavNext.classList.add('white-cursor');
-        galleryNavPrev.classList.add('white-cursor');
-        menuButton.classList.add('white');
-      }
-      //check if the white cursor should be changed back to black
-    } else {
-      if(istHalfItem && isRightItem) {
-          galleryNavNext.classList.remove('white-cursor');
-          menuButton.classList.remove('white');
-      } else if(istHalfItem && !(isRightItem)) {
-        galleryNavPrev.classList.remove('white-cursor');
-      } else {
-        galleryNavNext.classList.remove('white-cursor');
-        galleryNavPrev.classList.remove('white-cursor');
-        menuButton.classList.remove('white');
-      }
-    }
-
-    //if it's half image check where we should position it
-    if(istHalfItem && !(isRightItem)) {
-      currentItem.classList.add('activeLeft');
-      isRightItem = true;
-    } else {
-      currentItem.classList.add('active');
-      isRightItem = false;
-    }
   }
 
   function showPrevItem() {
 
-  currentItem = galleryItemList[currentItemIndex];
 
-  //if it's half image check where we should position it
-  if(currentItem.classList.contains('activeLeft')) {
-    currentItem.classList.remove('activeLeft');
-    isRightItem = false;
-  } else {
-    currentItem.classList.remove('active');
-    isRightItem = true;
+        currentItem.classList.remove('active');
+
+        currentItemIndex--;
+
+        //hide or show the navigation areas based on where we are in the gallery
+        if(currentItemIndex < galleryItemListLength - 1) { galleryNavNext.classList.add('active'); }
+        if(currentItemIndex < 0) { galleryNavPrev.classList.remove('active'); }
+
+
+        if(currentItemIndex >= 0) {
+            currentItem = galleryItemList[currentItemIndex];
+            currentItemType = currentItem.dataset.type; //halfLeftLight, halfLeftDark, halfRightLight, halfRightDark, fullLight, fullDark
+            previousItmeType = galleryItemList[currentItemIndex - 1] ? galleryItemList[currentItemIndex - 1].dataset.type : 'startFollowedBy' + currentItemType; //if it's the -1 index then we are at the start
+
+
+            //check if the cursor and/or the menu open button needs to be white/black because of a dark/light background
+            //if the current item is not full we also need to check the previous item
+            if(currentItemType.indexOf('full') === -1) { itemTypeBasedChanges(previousItmeType); }
+
+            itemTypeBasedChanges(currentItemType);
+        } else {
+            galleryNavNext.classList.remove('white-cursor');
+            menuButton.classList.remove('white');
+        }
+
   }
 
-    currentItemIndex--;
-
-    if(currentItemIndex < 0) { galleryNavPrev.classList.remove('active'); }
-    if(currentItemIndex < galleryItemListLength - 1) { galleryNavNext.classList.add('active'); }
-
-    //currentItemIndex < 0 ? currentItemIndex = galleryItemListLength - 1 : true;
-
+  function itemTypeBasedChanges(itemType) {
+      switch(itemType) {
+          case 'halfLeftLight':
+              galleryNavPrev.classList.remove('white-cursor');
+              break;
+          case 'halfLeftDark':
+              galleryNavPrev.classList.add('white-cursor');
+              break;
+          case 'halfRightLight':
+              galleryNavNext.classList.remove('white-cursor');
+              menuButton.classList.remove('white');
+              break;
+          case 'halfRightDark':
+              galleryNavNext.classList.add('white-cursor');
+              menuButton.classList.add('white');
+              break;
+          case 'fullLight':
+              galleryNavNext.classList.remove('white-cursor');
+              galleryNavPrev.classList.remove('white-cursor');
+              menuButton.classList.remove('white');
+              break;
+          case 'fullDark':
+              galleryNavNext.classList.add('white-cursor');
+              galleryNavPrev.classList.add('white-cursor');
+              menuButton.classList.add('white');
+              break;
+          case 'startFollowedByhalfLeftDark':
+              galleryNavNext.classList.remove('white-cursor');
+              menuButton.classList.remove('white');
+              break;
+          case 'startFollowedByhalfLeftLight':
+              galleryNavNext.classList.remove('white-cursor');
+              menuButton.classList.remove('white');
+              break;
+          default:
+              false
+      }
   }
-
 }
