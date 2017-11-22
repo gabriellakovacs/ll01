@@ -16,9 +16,36 @@
 
 .info-section--right .info-img {
   background-image: url("../img/sa_02.jpg");
+
+  &.move-out { transform: translateX(100%); }
 }
 
 
 .info-section--left .info-img {
   background-image: url("../img/sa_03.jpg");
+
+  &.move-out { transform: translateX(-100%); }
+}
+
+@keyframes infoSlideRight {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(150px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes infoSlideLeft {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(-150px); }
+    100% { transform: translateX(0); }
+}
+
+.is-touch .in-view {
+    .info-section--right .info-img {
+        animation: infoSlideRight 1s cubic-bezier(0,.14,.55,.99) 1s;
+    }
+
+    .info-section--left .info-img {
+        animation: infoSlideLeft 1s cubic-bezier(0,.14,.55,.99);
+    }
+
 }
