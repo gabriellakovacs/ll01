@@ -17,5 +17,5 @@
   opacity: 0;
   //transition: 0.3s ease-out;
 
-  &:hover { opacity: 1; }
+  &:hover, &.hover { opacity: 1; }
 }
