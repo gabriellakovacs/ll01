@@ -15,4 +15,8 @@
 
 .country-cover-title.move-right {
   transform: translate(100vw, -50%);
+
+  @media screen and (orientation:portrait) {
+      transform: translate(100vh, -50%);
+  }
 }
