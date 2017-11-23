@@ -24,7 +24,8 @@ $(function() {
             galleryStarter.removeClass('move-right');
             galleryNavNext.removeClass('active');
             galleryNavPrev.removeClass('active');
-        }
+        },
+        updateHash: false
     });
 
     $('.js-scrollNext').click(function() {
