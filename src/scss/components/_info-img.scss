@@ -49,3 +49,18 @@ body:not(.no-touch) .in-view {
         animation: infoSlideLeft 1s cubic-bezier(0,.14,.55,.99);
     }
 }
+
+
+
+body:not(.no-touch) {
+
+    .info-section--right.move-out .info-img {
+        transform: translateX(100%);
+        transition: transform 1s cubic-bezier(0,.14,.55,.99);
+    }
+
+    .info-section--left.move-out .info-img {
+        transform: translateX(-100%);
+        transition: transform 1s cubic-bezier(0,.14,.55,.99);
+    }
+}
