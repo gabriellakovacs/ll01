@@ -30,6 +30,7 @@ function initGallery(gallery, title) {
 
   var galleryNavNext = gallery.querySelector('.js-galleryNext');
   var galleryNavPrev = gallery.querySelector('.js-galleryPrev');
+  var galleryNav = gallery.querySelector('.js-galleryNavigation');
   var galleryItemList = gallery.querySelectorAll('.js-galleryItem');
   var galleryItemListLength = galleryItemList.length;
   var currentItemIndex = -1;
@@ -42,9 +43,19 @@ function initGallery(gallery, title) {
   galleryNavNext.classList.add('active');
 
 
-  //TODO: touchscreen navigation
+  //SWIPE NAVIGATION
+  var galleryNavSwipe = new Hammer(galleryNav);
+  galleryNavSwipe.on('swiperight', function() {
+      if(currentItemIndex >= 0) { showPrevItem(); }
+  });
+
+  galleryNavSwipe.on('swipeleft', function() {
+      if(currentItemIndex <= galleryItemListLength - 2) { showNextItem(); }
+  });
 
 
+
+  //CLICK NAVIGATION
   galleryNavNext.addEventListener(
     'click',
     showNextItem
