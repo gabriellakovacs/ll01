@@ -52,14 +52,9 @@
                 class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem js-galleryItem--half"
                 data-type="half{{ side|capitalize }}{{ backgroundShade|capitalize }}"
             >
-              <p class="gallery-text gallery-text--{{ backgroundShade }}">
-                  <span class="text--en">
-                      {{ item.text }}
-                  </span>
-                  <span class="text--de">
-                      {{ item.textDe }}
-                  </span>
-              </p>
+                {# TEXT #}
+                {% include "views/components/general/text.twig" with { 'text' : item.text, 'textDe' : item.textDe, 'side' : side, 'componentClasses' : 'gallery-text gallery-text--' ~ backgroundShade } %}
+
             </div>
 
         {% endif %}

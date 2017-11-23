@@ -1,0 +1,6 @@
+.menu-button-text-wrap::before {
+    content: '';
+    float: right;
+    width: calc(#{$closeBbutton} * 1.2 + #{$sideSpacing});
+    height: calc(#{$closeBbutton} * 1 + #{$sideSpacing});
+}

@@ -41,10 +41,3 @@
   transform: translate(50%, -50%);
   border: $closeBbutton / 2 - 6px solid #000000;
 }
-
-
-.menu-button-text-wrap {
-  float: right;
-  width: calc(#{$closeBbutton} * 2 + #{$sideSpacing});
-  height: calc(#{$closeBbutton} * 1.5 + #{$sideSpacing});
-}

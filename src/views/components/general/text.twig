@@ -1,0 +1,14 @@
+{% set menuButtonTextWrap = '' %}
+
+{% if side == 'right' %}
+    {% set menuButtonTextWrap = 'menu-button-text-wrap' %}
+{% endif %}
+
+<p class="{{ componentClasses }} {{ menuButtonTextWrap }}">
+  <span class="text--en">
+      {{ text }}
+  </span>
+  <span class="text--de">
+      {{ textDe }}
+  </span>
+</p>

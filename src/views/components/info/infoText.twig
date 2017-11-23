@@ -1,14 +1,2 @@
-<div>
-  {% if side == 'right' %}
-    <div class="menu-button-text-wrap"></div>
-  {% endif %}
-
-  <p class="info-text">
-      <span class="text--en">
-          {{ text }}
-      </span>
-      <span class="text--de">
-          {{ textDe }}
-      </span>
-  </p>
-</div>
+{# TEXT #}
+{% include "views/components/general/text.twig" with { 'text' : text, 'textDe' : textDe, 'side' : side, 'componentClasses' : 'info-text' } %}
