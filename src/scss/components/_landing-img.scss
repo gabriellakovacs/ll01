@@ -16,6 +16,11 @@
   z-index: 0;
   opacity: 0;
   //transition: 0.3s ease-out;
+}
 
-  &:hover, &.hover { opacity: 1; }
+
+.no-touch {
+    .landing-img:hover, .landing-img.hover {
+        opacity: 1;
+    }
 }

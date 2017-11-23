@@ -9,9 +9,10 @@
   background-repeat: no-repeat;
   background-position: center;
   transition: .5s ease-in;
-
-  &:hover { opacity: 0; }
 }
+
+
+.no-touch .info-img:hover { opacity: 0; }
 
 
 .info-section--right .info-img {
@@ -39,7 +40,7 @@
     100% { transform: translateX(0); }
 }
 
-.is-touch .in-view {
+body:not(.no-touch) .in-view {
     .info-section--right .info-img {
         animation: infoSlideRight 1s cubic-bezier(0,.14,.55,.99) 1s;
     }
@@ -47,5 +48,4 @@
     .info-section--left .info-img {
         animation: infoSlideLeft 1s cubic-bezier(0,.14,.55,.99);
     }
-
 }
