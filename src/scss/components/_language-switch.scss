@@ -1,0 +1,27 @@
+.language-switch-wrapper {
+    position: absolute;
+    bottom: $sideSpacing;
+
+    .onhover-underline {
+        &::after {
+            bottom:  -5px;
+            height: 1px;
+            background-color: #000;
+        }
+
+        &:hover::after {
+            bottom: 0;
+        }
+    }
+}
+
+
+.language-switch {
+    display: inline-block;
+    cursor: pointer;
+
+    &:first-child:after {
+        content: '\2022';
+        display: inline-block;
+    }
+}

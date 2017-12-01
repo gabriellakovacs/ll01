@@ -11,7 +11,7 @@
   background: #ffffff;
   transform: translateY(100%);
   pointer-events: none;
-  transition: transform 0.4s cubic-bezier(0,.14,.55,.99);
+  transition: transform 0.4s cubic-bezier(0,.14,.55,.99), opacity 0.1s 0.5s;
 
   @media screen and (orientation:portrait) {
       transform: translate(100% 0%);
@@ -26,13 +26,13 @@
 
   .onhover-underline {
       &::after {
-          bottom:  $menu-font-size / 5 * -1.5;
-          height: $menu-font-size / 5;
+          bottom:  $menu-font-size / 10 * -1.5;
+          height: $menu-font-size / 10;
           background-color: #000;
       }
 
       &:hover::after {
-          bottom: $menu-font-size / 5 * -1;
+          bottom: $menu-font-size / 10 * -1;
       }
   }
 }
