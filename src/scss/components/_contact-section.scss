@@ -1,0 +1,18 @@
+.contact-section {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  padding: $sideSpacing;
+  overflow: hidden;
+}
+
+
+.contact-section--left {
+  left: 0;
+}
+
+
+.contact-section--right {
+  right: 0;
+}

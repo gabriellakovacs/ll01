@@ -1,5 +1,70 @@
+{% set contact = craft.entries.section('contact')[0] %}
+
 <section class="contact" id="contact">
 
-    <h2>contact</h2>
+    <div class="contact-section contact-section--left">
+
+        <div class="contact-paragraph">
+
+            <h2 class="contact-title">{{ contact.bioTitle }}</h2>
+
+            {% include "views/components/general/text.twig" with { 'text' : contact.bioEn, 'textDe' : contact.bioDe, 'side' : 'left', 'componentClasses' : 'contact-bio' } %}
+
+        </div>
+
+        <p class="contact-bottom">
+            All photographs appearing on this site are the property of Elisabeth Real. They are
+            protected by Swiss Copyright Laws, and are not to be downloaded or reproduced
+            in any way without the written permission of Elisabeth Real. © Copyright 2018 by
+            Elisabeth Real. All Rights Reserved.
+        </p>
+
+    </div>
+
+
+    <div class="contact-section contact-section--right">
+
+        <div class="contact-paragraph">
+            <h2 class="contact-title">Say hello</h2>
+            <span>→</span> <a href="mailto:mail@elisabethreal.ch">mail@elisabethreal.ch</a>
+        </div>
+
+        <div class="contact-paragraph">
+            <h2 class="contact-title">Follow</h2>
+
+            <ul>
+                <li>
+                    <a href="#">Instagram</a>
+                </li>
+                <li>
+                    <a href="#">Twitter</a>
+                </li>
+                <li>
+                    <a href="#">Facebook</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact-paragraph">
+            <h2 class="contact-title">Book Stores</h2>
+
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="contact-paragraph">
+            <h2>Important Dates</h2>
+
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="contact-bottom">
+
+        </div>
+
+    </div>
 
 </section>
