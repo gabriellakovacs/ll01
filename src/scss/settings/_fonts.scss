@@ -13,5 +13,16 @@
 }
 
 
+@font-face {
+    font-family: 'Suisse';
+    src: url('../fonts/suisse/suisseintl-medium-webfont.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/suisse/suisseintl-medium-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/suisse/suisseintl-medium-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/suisse/suisseintl-medium-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/suisse/suisseintl-medium-webfont.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+}
+
+
 $title: 'Manika';
-$text:  Helvetica;
+$text:  'Suisse';
