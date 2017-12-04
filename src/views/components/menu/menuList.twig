@@ -1,21 +1,25 @@
 {% set countryCoverList = craft.entries.section('countryCover') %}
 
-<ul class="menu-list">
+<nav>
 
-  <li>
-    <a class="js-menu-item  onhover-underline" href="#info">info</a>
-  </li>
+    <ul class="menu-list">
 
-  {% for countryCover in countryCoverList %}
-    <li>
-      <a class="js-menu-item onhover-underline" href="#{{ countryCover.title|replace({ ' ' : '' }) }}">{{ countryCover.title }}</a>
-    </li>
-	{% endfor %}
+        <li>
+            <a class="js-menu-item  onhover-underline" href="#info">info</a>
+        </li>
 
-  <li>
-    <a class="js-menu-item onhover-underline" href="#shop">shop</a>
-  </li>
-  <li>
-    <a class="js-menu-item onhover-underline" href="#contact">contact</a>
-  </li>
-</ul>
+        {% for countryCover in countryCoverList %}
+        <li>
+            <a class="js-menu-item onhover-underline" href="#{{ countryCover.title|replace({ ' ' : '' }) }}">{{ countryCover.title }}</a>
+        </li>
+        {% endfor %}
+
+        <li>
+            <a class="onhover-underline" href="#" target="_blank">shop</a>
+        </li>
+        <li>
+            <a class="js-menu-item onhover-underline" href="#contact">contact</a>
+        </li>
+    </ul>
+
+</nav>

@@ -26,8 +26,8 @@
 
   .onhover-underline {
       &::after {
-          bottom:  $menu-font-size / 10 * -1.5;
-          height: $menu-font-size / 10;
+          bottom:  $menu-font-size / 16 * -1.5;
+          height: $menu-font-size / 16;
           background-color: #000;
       }
 
