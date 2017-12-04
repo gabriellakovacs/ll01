@@ -1,9 +1,13 @@
+{# CHOOSE RANDOM IMAGE #}
+{% set randomIndex = random(2) %}
+
+
 <section class="info" id="info" data-section-name = "Info">
 
   {# INFO SECTION #}
-  {% include "views/components/info/infoSection.twig" with { 'side' : 'left' } %}
+  {% include "views/components/info/infoSection.twig" with { 'side' : 'left', 'randomIndex' : randomIndex } %}
 
   {# INFO SECTION #}
-  {% include "views/components/info/infoSection.twig" with { 'side' : 'right' } %}
+  {% include "views/components/info/infoSection.twig" with { 'side' : 'right', 'randomIndex' : randomIndex } %}
 
 </section>
