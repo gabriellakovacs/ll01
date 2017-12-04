@@ -33,35 +33,49 @@
             <h2 class="contact-title">Follow</h2>
 
             <ul>
-                <li>
+                <li class="arrow">
                     <a href="#">Instagram</a>
                 </li>
-                <li>
+                <li class="arrow">
                     <a href="#">Twitter</a>
                 </li>
-                <li>
+                <li class="arrow">
                     <a href="#">Facebook</a>
                 </li>
             </ul>
         </div>
 
+        {# BOOK STORES #}
+        {% if contact.bookStores %}
         <div class="contact-paragraph">
             <h2 class="contact-title">Book Stores</h2>
 
-            <ul>
-                <li></li>
-            </ul>
+            {{ contact.bookStores }}
         </div>
+        {% endif %}
 
-        <div class="contact-paragraph">
+        {# IMPORTANT DATES #}
+        {% if contact.importantDates %}
+        <div class="contact-paragraph contact-important-dates">
             <h2>Important Dates</h2>
 
+            {% for item in contact.importantDates %}
             <ul>
-                <li></li>
+                <li>
+                    {{ item.date|date("d/m") }} <span>&bull;</span> {{ item.eventName|striptags('<a>') }}
+                </li>
             </ul>
+            {% endfor %}
         </div>
+        {% endif %}
 
         <div class="contact-bottom">
+            <dl>
+                <dt>Design</dt>
+                <dd class="arrow">Offshore Studio</dd>
+                <dt>Coding</dt>
+                <dd class="arrow">Gabriella Kovacs</dd>
+            </dl>
 
         </div>
 
