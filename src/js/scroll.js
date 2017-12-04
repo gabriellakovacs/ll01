@@ -28,7 +28,11 @@ $(function() {
         updateHash: false
     });
 
-    $('.js-scrollNext').click(function() {
+    // $('.js-scrollNext').click(function() {
+    //     $.scrollify.next();
+    // });
+
+    $('.js-landing').click(function() {
         $.scrollify.next();
     });
 
