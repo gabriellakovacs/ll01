@@ -6,9 +6,9 @@
 
 <p class="{{ componentClasses }} {{ menuButtonTextWrap }}">
   <span class="text--en">
-      {{ text }}
+      {{ text|striptags('<br>')|raw }}
   </span>
   <span class="text--de">
-      {{ textDe }}
+      {{ textDe|striptags('<br>')|raw }}
   </span>
 </p>

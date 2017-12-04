@@ -1,25 +1,30 @@
 .info-text {
-  font-family: sans-serif;
-  padding: $sideSpacing;
+    width: 100%;
+    padding: $sideSpacing;
 }
 
 
 .info-section--left .info-text {
-  font-size: $info-left-font-size;
-  font-family: $title;
-  text-align: center;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: $info-left-font-size;
+    font-family: $title;
+    text-align: center;
 
-  @media screen and (orientation:portrait) {
+    @media screen and (orientation:portrait) {
       font-size: $info-left-font-size--portrait;
-  }
+    }
 }
 
 
 .info-section--right .info-text {
-  font-size: $info-right-font-size;
-  text-align: justify;
+    font-size: $info-right-font-size;
+    text-align: justify;
 
-  @media screen and (orientation:portrait) {
+    @media screen and (orientation:portrait) {
       font-size: $info-right-font-size--portrait;
-  }
+    }
 }
