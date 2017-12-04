@@ -11,15 +11,15 @@ var galleryStarter = document.querySelectorAll('.js-start-gallery');
 var menuButton = document.querySelector('.js-open-menu');
 
 
+
 //init all galleries
 for(var i = 0; i < galleryListLength; i++) {
-
   (function(indexOfGallery) {
     var gallery = galleryList[indexOfGallery];
     var title = galleryStarter[indexOfGallery];
 
     title.onclick = function() {
-      initGallery(gallery, title);
+        initGallery(gallery, title);
     }
   })(i);
 
@@ -33,10 +33,9 @@ function initGallery(gallery, title) {
   var galleryNav = gallery.querySelector('.js-galleryNavigation');
   var galleryItemList = gallery.querySelectorAll('.js-galleryItem');
   var galleryItemListLength = galleryItemList.length;
-  var currentItemIndex = -1;
+  var currentItemIndex =  -1;
   var currentItem;
   var currentItemType;
-
 
   //start gallery with click on title
   title.classList.add('move-right');
@@ -56,16 +55,8 @@ function initGallery(gallery, title) {
 
 
   //CLICK NAVIGATION
-  galleryNavNext.addEventListener(
-    'click',
-    showNextItem
-  );
-
-
-  galleryNavPrev.addEventListener(
-    'click',
-    showPrevItem
-  );
+  galleryNavNext.onclick = showNextItem;
+  galleryNavPrev.onclick = showPrevItem;
 
   function showNextItem() {
 
@@ -81,7 +72,7 @@ function initGallery(gallery, title) {
 
 
     //check if the cursor and/or the menu open button needs to be white/black because of a dark/light background
-    itemTypeBasedChanges(currentItemType);
+    //itemTypeBasedChanges(currentItemType);
 
   }
 
@@ -99,18 +90,18 @@ function initGallery(gallery, title) {
 
         if(currentItemIndex >= 0) {
             currentItem = galleryItemList[currentItemIndex];
-            currentItemType = currentItem.dataset.type; //halfLeftLight, halfLeftDark, halfRightLight, halfRightDark, fullLight, fullDark
-            previousItmeType = galleryItemList[currentItemIndex - 1] ? galleryItemList[currentItemIndex - 1].dataset.type : 'startFollowedBy' + currentItemType; //if it's the -1 index then we are at the start
-
-
-            //check if the cursor and/or the menu open button needs to be white/black because of a dark/light background
-            //if the current item is not full we also need to check the previous item
-            if(currentItemType.indexOf('full') === -1) { itemTypeBasedChanges(previousItmeType); }
-
-            itemTypeBasedChanges(currentItemType);
-        } else {
-            galleryNavNext.classList.remove('white-cursor');
-            menuButton.classList.remove('white');
+        //     currentItemType = currentItem.dataset.type; //halfLeftLight, halfLeftDark, halfRightLight, halfRightDark, fullLight, fullDark
+        //     previousItmeType = galleryItemList[currentItemIndex - 1] ? galleryItemList[currentItemIndex - 1].dataset.type : 'startFollowedBy' + currentItemType; //if it's the -1 index then we are at the start
+        //
+        //
+        //     //check if the cursor and/or the menu open button needs to be white/black because of a dark/light background
+        //     //if the current item is not full we also need to check the previous item
+        //     if(currentItemType.indexOf('full') === -1) { itemTypeBasedChanges(previousItmeType); }
+        //
+        //     itemTypeBasedChanges(currentItemType);
+        // } else {
+        //     galleryNavNext.classList.remove('white-cursor');
+        //     menuButton.classList.remove('white');
         }
 
   }
