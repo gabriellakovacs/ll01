@@ -14,12 +14,15 @@
     {% if item.type == "fullImage" %}
 
         {% set backgroundImg = 'background-image: url(' ~ item.fullImage.first().url ~ ');'  %}
+        {% set posX = item.posX | default("center")  %}
+        {% set posY = item.posY | default("center")  %}
+        {% set backgroundPos = 'background-position: ' ~ posX ~ ' ' ~ posY  ~ ';' %}
 
         <div
             class="gallery-item gallery-item--full js-galleryItem js-galleryItem--full {{ classIndicatingBackground }}"
             data-type="full{{ backgroundShade|capitalize }}"
         >
-          <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}"></div>
+          <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
         </div>
 
         {% set prevWasHalf = false %}
@@ -38,22 +41,56 @@
         {% if item.type == "halfImage" %}
 
             {% set backgroundImg = 'background-image: url(' ~ item.halfImage.first().url ~ ');'  %}
+            {% set posX = item.posX | default("center")  %}
+            {% set posY = item.posY | default("center")  %}
+            {% set backgroundPos = 'background-position: ' ~ posX ~ ' ' ~ posY ~ ';' %}
+
+            {% if item.sticksLeft %}
+                {% set side = 'right' %}
+                {% set prevWasHalf = false %}
+            {% endif %}
+
+            {% set beforeText = '' %}
+            {% if not(loop.last) %}
+                {% if gallery[loop.index0 + 1].type == 'text' %}
+                    {% set beforeText = 'gallery-item--before-text' %}
+                {% endif %}
+            {% endif %}
+
 
             <div
-                class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem {{ classIndicatingBackground }}"
+                class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem {{ classIndicatingBackground }}{{ beforeText }}"
                 data-type="half{{ side|capitalize }}{{ backgroundShade|capitalize }}"
             >
-              <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}"></div>
+              <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
             </div>
 
         {% elseif item.type == "text" %}
 
             <div
-                class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem js-galleryItem--half"
-                data-type="half{{ side|capitalize }}{{ backgroundShade|capitalize }}"
+                class="gallery-item gallery-item--half gallery-item--half--left gallery-item--text js-galleryItem js-galleryItem--half"
+                data-type="halfLeft{{ backgroundShade|capitalize }}"
             >
-                {# TEXT #}
-                {% include "views/components/general/text.twig" with { 'text' : item.text, 'textDe' : item.textDe, 'side' : side, 'componentClasses' : 'gallery-text gallery-text--' ~ backgroundShade } %}
+
+                {% set menuButtonTextWrap = '' %}
+
+                {% if side == 'right' %}
+                    {% set menuButtonTextWrap = 'menu-button-text-wrap' %}
+                {% endif %}
+
+                <div class="gallery-text gallery-text--{{  backgroundShade }} {{ menuButtonTextWrap }}">
+                    <div class="text--en">
+                        {{ item.text }}
+                    </div>
+                    <div class="text--de">
+                        {{ item.textDe }}
+                    </div>
+                </div>
+
+                <div class="gallery-text-link">
+                    {{ item.linkTo }}
+                </div>
+
 
             </div>
 

@@ -1,6 +1,9 @@
-{% set backgroundImg = "background-image: url(" ~ image.url ~ ");"  %}
+{% set backgroundImg = "background-image: url(" ~ image.src.first().url ~ ");"  %}
+{% set posX = image.posX | default("center")  %}
+{% set posY = image.posY | default("center")  %}
+{% set backgroundPos = 'background-position: ' ~ posX ~ ' ' ~ posY ~ ';' %}
 
-<div class="info-img js-info-img" style = "{{ backgroundImg }}">
+<div class="info-img js-info-img" style = "{{ backgroundImg }}{{ backgroundPos }}">
 
   {# TODO: transform image #}
 

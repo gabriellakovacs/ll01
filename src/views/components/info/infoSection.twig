@@ -3,13 +3,12 @@
 {% if (side == 'left') %}
 {% set text = info.textLeft  %}
 {% set textDe = info.textLeftDe  %}
-{% set image = info.imageLeft.first() %}
+{% set image = info.imageLeft[randomIndex] %}
 {% elseif (side == 'right') %}
 {% set text = info.textRight  %}
 {% set textDe = info.textRightDe  %}
-{% set image = info.imageRight.first() %}
+{% set image = info.imageRight[randomIndex] %}
 {% endif %}
-
 
 
 <div class="info-section info-section--{{ side }} js-info-section--{{ side }}">
