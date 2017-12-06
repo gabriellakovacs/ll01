@@ -3,8 +3,22 @@
 {% set posY = image.posY | default("center")  %}
 {% set backgroundPos = 'background-position: ' ~ posX ~ ' ' ~ posY ~ ';' %}
 
-<div class="info-img js-info-img" style = "{{ backgroundImg }}{{ backgroundPos }}">
+<div class="lazy info-img js-info-img" style = "{{ backgroundImg }}{{ backgroundPos }}">
 
   {# TODO: transform image #}
 
+</div>
+
+<div class="info-img-wrapper">
+    <picture class="info-img js-info-img">
+        <source media="(min-aspect-ratio: 2/1) and (max-width: 500px)" srcset="{{ backgroundImg }}">
+        <source media="(min-aspect-ratio: 2/1) and (max-width: 500px)" srcset="{{ backgroundImg }}">
+        <source media="(min-aspect-ratio: 2/1) and (max-width: 500px)" srcset="{{ backgroundImg }}">
+
+        <source media="(max-height: 600px)" srcset="{{ backgroundImg }}">
+        <source media="(max-height: 1200px)" srcset="{{ backgroundImg }}">
+        <source media="(max-height: 1800px)" srcset="{{ backgroundImg }}">
+
+        <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+    </picture>
 </div>

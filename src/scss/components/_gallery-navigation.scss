@@ -40,3 +40,15 @@
 
   &.active { height: 100%; }
 }
+
+
+.ie {
+    .galleryPrev {
+      cursor: url('../img/cursor/galleryPrevSmall.cur'), pointer;
+    }
+
+
+    .galleryNext {
+      cursor: url('../img/cursor/galleryNextSmall.cur'), pointer;
+    }
+}

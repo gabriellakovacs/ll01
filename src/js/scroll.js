@@ -1,9 +1,9 @@
 $(function() {
 
-    var infoHasFired = false;
+    var infoWasViewed = false;
     var menuButton = $('.js-open-menu');
-    var galleryItemList = $('.js-galleryItem');//active
-    var galleryStarter = $('.js-start-gallery'); //move-right
+    var galleryItemList = $('.js-galleryItem');
+    var galleryStarter = $('.js-start-gallery');
     var galleryNavNext = $('.js-galleryNext');
     var galleryNavPrev = $('.js-galleryPrev');
 
@@ -13,9 +13,11 @@ $(function() {
         overflowScroll: false,
         scrollbars: false,
         after:function(index, sections) {
-            if(!infoHasFired && index === 1) {
+            //ontouchscreen the info panel has an animation to show that the images can be slided
+            //this should only happen the first time the info section comes to view
+            if(!infoWasViewed && index === 1) {
                 sections[1].addClass('in-view');
-                infoHasFired = true;
+                infoWasViewed = true;
             }
         },
         before: function(){
