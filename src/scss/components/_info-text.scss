@@ -22,7 +22,7 @@
 
 .info-section--right .info-text {
     font-size: $info-right-font-size;
-    text-align: justify;
+    text-align: left;
 
     @media screen and (orientation:portrait) {
       font-size: $info-right-font-size--portrait;
