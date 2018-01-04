@@ -38,7 +38,7 @@ function initGallery(gallery, title) {
   var currentItemType;
 
   //start gallery with click on title
-  title.classList.add('move-right');
+  title.classList.add('move-left');
   galleryNavNext.classList.add('active');
 
 
