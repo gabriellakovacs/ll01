@@ -21,7 +21,12 @@
     position: absolute;
     bottom: $sideSpacing;
     left: $sideSpacing;
+    font-size: $gallery-font-size;
 
+    @media screen and (orientation:portrait) {
+        font-size: $gallery-font-size--portrait;
+    }
+    
     a {
         color: black;
     }
