@@ -26,20 +26,24 @@
 
         <div class="contact-paragraph">
             <h2 class="contact-title">Say hello</h2>
-            <span>→</span> <a href="mailto:mail@elisabethreal.ch">mail@elisabethreal.ch</a>
+            {% include "views/components/general/arrow.twig" %}
+            <a href="mailto:mail@elisabethreal.ch">mail@elisabethreal.ch</a>
         </div>
 
         <div class="contact-paragraph">
             <h2 class="contact-title">Follow</h2>
 
             <ul>
-                <li class="arrow">
+                <li>
+                    {% include "views/components/general/arrow.twig" %}
                     <a href="#">Instagram</a>
                 </li>
-                <li class="arrow">
+                <li>
+                    {% include "views/components/general/arrow.twig" %}
                     <a href="#">Twitter</a>
                 </li>
-                <li class="arrow">
+                <li>
+                    {% include "views/components/general/arrow.twig" %}
                     <a href="#">Facebook</a>
                 </li>
             </ul>
@@ -72,9 +76,16 @@
         <div class="contact-bottom">
             <dl>
                 <dt>Design</dt>
-                <dd class="arrow">Offshore Studio</dd>
+                <dd>
+                    {% include "views/components/general/arrow.twig" %}
+                    Offshore Studio
+                </dd>
+                <br>
                 <dt>Coding</dt>
-                <dd class="arrow">Gabriella Kovacs</dd>
+                <dd>
+                    {% include "views/components/general/arrow.twig" %}
+                    Gabriella Kovacs
+                </dd>
             </dl>
 
         </div>

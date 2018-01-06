@@ -1,3 +1,17 @@
-.arrow:before {
-    content: '\2192';
+.arrow {
+    position: relative;
+    display: inline-block;
+    height: 1vw;
+
+
+    svg {
+        height: 0.5vw;
+    }
+}
+
+.arrow-polyline {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 10;
+    stroke-miterlimit: 10;
 }
