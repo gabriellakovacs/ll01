@@ -24,15 +24,4 @@
     transition: transform 0.4s cubic-bezier(0,.14,.55,.99);
   }
 
-  .onhover-underline {
-      &::after {
-          bottom:  $menu-font-size / 16 * -1.5;
-          height: $menu-font-size / 16;
-          background-color: #000;
-      }
-
-      &:hover::after {
-          bottom: $menu-font-size / 10 * -1;
-      }
-  }
 }

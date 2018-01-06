@@ -1,0 +1,7 @@
+.menu-item.onhover-underline {
+    &::after {
+        bottom: $menu-font-size / 20;
+        height: $menu-font-size / 16;
+        background-color: #000;
+    }
+} 
