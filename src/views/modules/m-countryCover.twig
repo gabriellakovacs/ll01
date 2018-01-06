@@ -1,7 +1,7 @@
 <section class="countryCover" id="{{ countryCover.title|replace({ ' ' : '' }) }}">
 
   {# COUNTRY COVER TITLE #}
-  {% include "views/components/countryCover/countryCoverTitle.twig" with { 'title' : countryCover.title } %}
+  {% include "views/components/countryCover/countryCoverTitle.twig" with { 'title' : countryCover.title, 'titleDe' : countryCover.titleDe } %}
 
   {# COUNTRY COVER IMG #}
   {% include "views/components/countryCover/countryCoverImg.twig" with { 'img' : countryCover.image } %}

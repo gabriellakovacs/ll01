@@ -7,7 +7,7 @@ $closeBbutton: 50px;
 
 
 //BORDERS
-$sectionBorderW: 6px;
+$sectionBorderW: 4px;
 
 
 //SPACING
@@ -20,11 +20,12 @@ $contact-paragraph-after: 2vw;
 //FONT SIZE
 //landscape
 $landing-font-size: 10vw;
-$info-left-font-size: 5vw;
+$info-left-font-size: 5.5vw;
 $info-right-font-size: 1.4vw;
-$menu-font-size: 5vw;
+$menu-font-size: 5.5vw;
 $gallery-font-size: $info-right-font-size;
 $language-switch-font-size: $info-right-font-size;
+$contact-font-size: $info-right-font-size;
 
 //portrait
 $landing-font-size--portrait: 10vh;
@@ -33,11 +34,14 @@ $info-right-font-size--portrait: 2vh;
 $menu-font-size--portrait: 10vh;
 $gallery-font-size--portrait: $info-right-font-size--portrait;
 $language-switch-font-size--portrait: $info-right-font-size--portrait;
+$contact-font-size--portrait: $info-right-font-size--portrait;
 
 //LINE HEIGHT
 $info-right-line-height: calc(#{$info-right-font-size} * 1.2);
 $gallery-line-height: calc(#{$gallery-font-size} * 1.2);
+$contact-line-height: calc(#{$contact-font-size} * 1.2);
 
 
 $info-right-line-height--portrait: calc(#{$info-right-font-size--portrait} * 1.2);
 $gallery-line-height--portrait: calc(#{$gallery-font-size--portrait} * 1.2);
+$contact-line-height--portrait: calc(#{$contact-font-size--portrait} * 1.2);

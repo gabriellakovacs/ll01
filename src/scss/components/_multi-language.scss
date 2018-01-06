@@ -5,6 +5,7 @@
 
 .language--de {
     .text--de { display: block; }
+    .menu-list .text--de { display: inline; }
 }
 
 
@@ -15,4 +16,5 @@
 
 .language--en {
     .text--en { display: block; }
+    .menu-list .text--en { display: inline; }
 }

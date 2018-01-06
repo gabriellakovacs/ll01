@@ -1,3 +1,19 @@
 .contact {
   position: relative;
+  font-size: $contact-font-size;
+  line-height: $contact-line-height;
+
+  @media screen and (orientation:portrait) {
+      font-size: $contact-font-size--portrait;
+      line-height: $contact-line-height--portrait;
+  }
+
+  a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+          text-decoration: underline;
+      }
+  }
 }

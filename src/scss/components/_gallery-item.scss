@@ -18,23 +18,23 @@ $duration-short: 0.2s;
 
 
 .gallery-item--half {
-  width: 50%;
+  width: calc(50% + #{$sectionBorderW} / 2);
 }
 
 
 .gallery-item--half--left {
-  //border-right: $sectionBorderW / 2 solid $borderColor;
+    border-right: $sectionBorderW solid $borderColor;
 }
 
 .gallery-item--half--left.gallery-item--text {
     transition: transform $duration-short $easing;
-  //border-right: $sectionBorderW / 2 solid $borderColor;
+    border-right: $sectionBorderW solid $borderColor;
 }
 
 
 .gallery-item--half--right {
-  transition: transform $duration-short $easing;
-  //border-left: $sectionBorderW / 2 solid $borderColor;
+    transition: transform $duration-short $easing;
+    border-left: $sectionBorderW solid $borderColor;
 }
 
 
@@ -44,7 +44,7 @@ $duration-short: 0.2s;
 
 
 .gallery-item--half--left.active {
-  transform: translateX(-100%)!important;
+  transform: translateX(calc(-100% + 4px))!important;
 }
 
 

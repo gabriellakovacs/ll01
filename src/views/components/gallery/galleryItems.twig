@@ -87,9 +87,11 @@
                     </div>
                 </div>
 
-                <div class="gallery-text-link">
-                    {{ item.linkTo }}
-                </div>
+                {# GALLERY TEXT LINK #}
+                {# <div class="gallery-text-link">
+                    {% include "views/components/general/arrow.twig" %}
+                    {{ item.linkTo|replace({ '<p>': '', '</p>': '' })|raw }}
+                </div> #}
 
 
             </div>

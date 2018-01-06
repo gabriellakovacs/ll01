@@ -5,20 +5,43 @@
     <ul class="menu-list">
 
         <li>
-            <a class="js-menu-item menu-item  onhover-underline" href="#info">info</a>
+            <a class="js-menu-item menu-item  onhover-underline" href="#info">
+                <span class="text--en">
+                    Info
+                </span>
+                <span class="text--de">
+                    Info
+                </span>
+            </a>
         </li>
 
         {% for countryCover in countryCoverList %}
         <li>
-            <a class="js-menu-item menu-item onhover-underline" href="#{{ countryCover.title|replace({ ' ' : '' }) }}">{{ countryCover.title }}</a>
+            <a class="js-menu-item menu-item onhover-underline" href="#{{ countryCover.title|replace({ ' ' : '' }) }}">
+                <span class="text--en">
+                    {{ countryCover.title }}
+                </span>
+                <span class="text--de">
+                    {{ countryCover.titleDe }}
+                </span>
+            </a>
         </li>
         {% endfor %}
 
         <li>
-            <a class="onhover-underline menu-item" href="#" target="_blank">shop</a>
+            <a class="onhover-underline menu-item" href="#" target="_blank">
+                Shop
+            </a>
         </li>
         <li>
-            <a class="js-menu-item menu-item onhover-underline" href="#contact">contact</a>
+            <a class="js-menu-item menu-item onhover-underline" href="#contact">
+                <span class="text--en">
+                    Contact
+                </span>
+                <span class="text--de">
+                    Kontakt
+                </span>
+            </a>
         </li>
     </ul>
 

@@ -8,7 +8,34 @@
 
             <h2 class="contact-title">{{ contact.bioTitle }}</h2>
 
-            {% include "views/components/general/text.twig" with { 'text' : contact.bioEn, 'textDe' : contact.bioDe, 'side' : 'left', 'componentClasses' : 'contact-bio' } %}
+            <div class="contact-bio">
+                <div class="text--en">
+                    {{ contact.bioEn|replace({
+                    '<a': '<span class="arrow">
+                        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        	 viewBox="0 0 80 80" xml:space="preserve">
+                        <g>
+                        	<path d="M40.3,15.3l5.4-5.3l30,30l-30,30l-5.4-5.4l20.4-20.3H4.3v-8.5h56.5L40.3,15.3z"/>
+                        </g>
+                        </svg>
+                    </span><a'
+                    })|raw }}
+                </div>
+                <div class="text--de">
+                    {{ contact.bioDe|replace({
+                    '<a': '<span class="arrow">
+                        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        	 viewBox="0 0 80 80" xml:space="preserve">
+                        <g>
+                        	<path d="M40.3,15.3l5.4-5.3l30,30l-30,30l-5.4-5.4l20.4-20.3H4.3v-8.5h56.5L40.3,15.3z"/>
+                        </g>
+                        </svg>
+                    </span><a'
+                    })|raw }}
+                </div>
+            </div>
+
+            <!-- {# include "views/components/general/text.twig" with { 'text' : contact.bioEn, 'textDe' : contact.bioDe, 'side' : 'left', 'componentClasses' : 'contact-bio' } #} -->
 
         </div>
 
@@ -36,30 +63,29 @@
             <ul>
                 <li>
                     {% include "views/components/general/arrow.twig" %}
-                    <a href="#">Instagram</a>
+                    <a href="https://www.instagram.com/lesbianlivesproject/" target="_blank">Instagram</a>
                 </li>
                 <li>
                     {% include "views/components/general/arrow.twig" %}
-                    <a href="#">Twitter</a>
+                    <a href="https://twitter.com/lesbianlivespro" target="_blank">Twitter</a>
                 </li>
                 <li>
                     {% include "views/components/general/arrow.twig" %}
-                    <a href="#">Facebook</a>
+                    <a href="https://www.facebook.com/lesb1anlivesproject/" target="_blank">Facebook</a>
                 </li>
             </ul>
         </div>
 
         {# BOOK STORES #}
-        {% if contact.bookStores %}
+        {% if contact.bookStores|length %}
         <div class="contact-paragraph">
             <h2 class="contact-title">Book Stores</h2>
-
             {{ contact.bookStores }}
         </div>
         {% endif %}
 
         {# IMPORTANT DATES #}
-        {% if contact.importantDates %}
+        {% if contact.importantDates|length %}
         <div class="contact-paragraph contact-important-dates">
             <h2>Important Dates</h2>
 
@@ -78,7 +104,7 @@
                 <dt>Design</dt>
                 <dd>
                     {% include "views/components/general/arrow.twig" %}
-                    Offshore Studio
+                    <a href="http://www.offshorestudio.ch/" target="_blank">Offshore Studio</a>
                 </dd>
                 <br>
                 <dt>Coding</dt>
