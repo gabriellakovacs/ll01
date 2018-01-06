@@ -3,10 +3,12 @@
   height: 100%;
   padding: $sideSpacing;
   font-size: $gallery-font-size;
+  line-height: $gallery-line-height;
   background-color: #ffffff;
 
   @media screen and (orientation:portrait) {
       font-size: $gallery-font-size--portrait;
+      line-height: $gallery-line-height--portrait;
   }
 }
 
@@ -26,7 +28,7 @@
     @media screen and (orientation:portrait) {
         font-size: $gallery-font-size--portrait;
     }
-    
+
     a {
         color: black;
     }
