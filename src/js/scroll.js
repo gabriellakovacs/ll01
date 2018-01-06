@@ -23,7 +23,7 @@ $(function() {
         before: function(){
             menuButton.removeClass('white');
             galleryItemList.removeClass('active');
-            galleryStarter.removeClass('move-right');
+            galleryStarter.removeClass('move-left');
             galleryNavNext.removeClass('active');
             galleryNavPrev.removeClass('active');
         },
