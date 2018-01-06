@@ -22,7 +22,7 @@
             class="gallery-item gallery-item--full js-galleryItem js-galleryItem--full {{ classIndicatingBackground }}"
             data-type="full{{ backgroundShade|capitalize }}"
         >
-          <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
+          <div class="lazy gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
         </div>
 
         {% set prevWasHalf = false %}
@@ -62,7 +62,7 @@
                 class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem {{ classIndicatingBackground }}{{ beforeText }}"
                 data-type="half{{ side|capitalize }}{{ backgroundShade|capitalize }}"
             >
-              <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
+              <div class="lazy gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
             </div>
 
         {% elseif item.type == "text" %}
