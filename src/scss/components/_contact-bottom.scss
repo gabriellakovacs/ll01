@@ -4,4 +4,8 @@
   left: 0;
   width: 100%;
   padding: $sideSpacing;
+
+  dt, dd {
+      display: inline-block;
+  }
 }
