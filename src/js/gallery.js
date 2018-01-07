@@ -41,6 +41,12 @@ document.addEventListener("DOMContentLoaded", function() {
       title.classList.add('move-left');
       galleryNavNext.classList.add('active');
 
+      if(!document.body.classList.contains('no-touch')) {
+          setTimeout(function(){
+              showNextItem();
+          }, 1000);
+      }
+
 
       //SWIPE NAVIGATION
       var galleryNavSwipe = new Hammer(galleryNav);

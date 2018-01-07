@@ -1,10 +1,11 @@
 .info-text {
     width: 100%;
+    max-height: 100%;
     padding: $sideSpacing;
 }
 
 
-.info-section--left .info-text {
+.info-section--right .info-text {
     z-index: -1;
     position: absolute;
     top: 50%;
@@ -20,13 +21,16 @@
 }
 
 
-.info-section--right .info-text {
+.info-section--left .info-text {
     font-size: $info-right-font-size;
     line-height: $info-right-line-height;
     text-align: left;
 
     @media screen and (orientation:portrait) {
       font-size: $info-right-font-size--portrait;
-      line-height: $info-right-line-height--portrait;
+    }
+
+    @include bp-s {
+        font-size: $info-right-font-size--bps;
     }
 }

@@ -3,6 +3,14 @@
     bottom: $sideSpacing;
     font-size: $language-switch-font-size;
 
+    @media screen and (orientation:portrait) {
+      font-size: $language-switch-font-size--portrait;
+    }
+
+    @include bp-s {
+        font-size: $language-switch-font-size--bps;
+    }
+
     .onhover-underline {
         &::after {
             bottom: 0;
@@ -20,5 +28,9 @@
     &:first-child:after {
         content: '\2022';
         display: inline-block;
+
+        @include bp-s {
+            transform: translateY(-5%);
+        }
     }
 }

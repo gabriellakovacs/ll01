@@ -1,0 +1,40 @@
+{% set s = {
+    height: 270,
+    quality: 100,
+} %}
+
+{% set m = {
+    height: 450,
+    quality: 100,
+} %}
+
+{% set l = {
+    height: 630,
+    quality: 100,
+} %}
+
+{% set xl = {
+    height: 900,
+    quality: 100,
+} %}
+
+{% set xxl = {
+    height: 1800,
+    quality: 100,
+} %}
+
+{% set xxl = {
+    height: 2800,
+    quality: 100,
+} %}
+
+
+
+<picture>
+    <source media="(min-height: 2001px)" srcset="{{ img.getUrl(xxxl) }}">
+    <source media="(min-height: 1001px)" srcset="{{ img.getUrl(xxl) }}">
+    <source media="(min-height: 701px)" srcset="{{ img.getUrl(xl) }}">
+    <source media="(min-height: 501px)" srcset="{{ img.getUrl(l) }}">
+    <source media="(min-height: 301px)" srcset="{{ img.getUrl(m) }}">
+    <img class="{{ classList }}" src="{{ img.getUrl(s) }}" alt="the lesbian lives project">
+</picture>

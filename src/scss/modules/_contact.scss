@@ -5,7 +5,10 @@
 
   @media screen and (orientation:portrait) {
       font-size: $contact-font-size--portrait;
-      line-height: $contact-line-height--portrait;
+  }
+
+  @include bp-s {
+      font-size: $contact-font-size--bps;
   }
 
   a {

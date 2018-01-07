@@ -36,12 +36,13 @@ $gallery-font-size--portrait: $info-right-font-size--portrait;
 $language-switch-font-size--portrait: $info-right-font-size--portrait;
 $contact-font-size--portrait: $info-right-font-size--portrait;
 
+//bp-s
+$info-right-font-size--bps: 2.05vw;
+$gallery-font-size--bps: $info-right-font-size--bps;
+$language-switch-font-size--bps: $info-right-font-size--bps;
+$contact-font-size--bps: $info-right-font-size--bps;
+
 //LINE HEIGHT
-$info-right-line-height: calc(#{$info-right-font-size} * 1.2);
-$gallery-line-height: calc(#{$gallery-font-size} * 1.2);
-$contact-line-height: calc(#{$contact-font-size} * 1.2);
-
-
-$info-right-line-height--portrait: calc(#{$info-right-font-size--portrait} * 1.2);
-$gallery-line-height--portrait: calc(#{$gallery-font-size--portrait} * 1.2);
-$contact-line-height--portrait: calc(#{$contact-font-size--portrait} * 1.2);
+$info-right-line-height: 120%;
+$gallery-line-height: 120%;
+$contact-line-height: 120%;

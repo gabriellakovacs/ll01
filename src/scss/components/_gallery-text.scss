@@ -8,7 +8,10 @@
 
   @media screen and (orientation:portrait) {
       font-size: $gallery-font-size--portrait;
-      line-height: $gallery-line-height--portrait;
+  }
+
+  @include bp-s {
+      font-size: $gallery-font-size--bps;
   }
 }
 

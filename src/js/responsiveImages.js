@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    console.log('load images');
-
     //BREAKPOINT MAX WIDTHS
     var bp_s = 400;
     var bp_m = 800;
@@ -14,42 +12,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var window_w = window.innerWidth;
     var currentBpIndex = 0;
+    var firstIteration = true;
 
     var priorityImgList = document.querySelectorAll('.js-img-priority');
     var secondaryImgList = document.querySelectorAll('.js-img-secondary');
 
-    var imgList = priorityImgList;
 
     checkIfBreakpointHasChanged();
 
     function loadImages(imgList) {
 
-        console.log('------------------');
-
-        console.log('FUNCTION loadImages');
-
         var listLength = imgList.length;
         for(var i = 0; i < listLength; i++) {
             setImgBackground(imgList[i]);
         }
-
-        console.log('------------------');
     }
 
     function loadSecondaryImages() {
-        console.log('------------------');
-
-        console.log('FUNCTION loadSecondaryImages');
         loadImages(secondaryImgList);
-
-        console.log('------------------');
     }
 
     function setImgBackground(img) {
-
-        console.log('------------------');
-
-        console.log('FUNCTION setImgBackground');
 
         var background;
 
@@ -83,56 +66,47 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         img.style.backgroundImage = "url(" + background + ")";
-
-        console.log('------------------');
     }
 
     function checkIfBreakpointHasChanged() {
 
-        console.log('------------------');
-
-        console.log('FUNCTION checkIfBreakpointHasChanged');
-
-        console.log('window_w ' + window_w);
-
         if(window_w > bpList[currentBpIndex]) {
-
-            console.log('window_w > bpList[currentBpIndex] ');
 
             if(currentBpIndex === bpListLength - 1) {
                 window.removeEventListener('resize', handleResize);
-                //resize all images
-                currentBpIndex = bpListLength;
-                loadImages(imgList);
 
+                currentBpIndex = bpListLength;
+                
+                //resize all images
+                loadImages(priorityImgList);
                 setTimeout(loadSecondaryImages, 6000);
             } else {
                 for(var i = currentBpIndex + 1; i < bpListLength; i++) {
-                    console.log('loop index ' + i);
                    if(window_w <= bpList[i]) {
                        currentBpIndex = i;
+
                        //resize all images!!!!!!!!!
-
-                       loadImages(imgList);
-
+                       loadImages(priorityImgList);
                        setTimeout(loadSecondaryImages, 6000);
                        break;
                    }
                 }
 
                 if(i === bpListLength) {
-                    console.log('i === bpListLength');
-                    //resize all images
-                    currentBpIndex = bpListLength;
-                    loadImages(imgList);
 
+                    currentBpIndex = bpListLength;
+
+                    //resize all images
+                    loadImages(priorityImgList);
                     setTimeout(loadSecondaryImages, 6000);
                     window.removeEventListener('resize', handleResize);
                 }
             }
+        } else if (firstIteration) {
+            firstIteration = false;
+            loadImages(priorityImgList);
+            setTimeout(loadSecondaryImages, 6000);
         }
-
-        console.log('------------------');
     }
 
     function handleResize() {

@@ -44,7 +44,7 @@ $duration-short: 0.2s;
 
 
 .gallery-item--half--left.active {
-  transform: translateX(calc(-100% + 4px))!important;
+  transform: translateX(-100%) translateX(4px);
 }
 
 
@@ -62,5 +62,9 @@ $duration-short: 0.2s;
 
   &.active + .gallery-item--text {
       transform: translateX(0%);
+  }
+
+  &.active + .gallery-item--text.gallery-item--half--left.active {
+      transform: translateX(-100%) translateX(4px);
   }
 }

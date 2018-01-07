@@ -7,6 +7,11 @@
     height:100vh;
     cursor: pointer;
     transition: transform 0.4s cubic-bezier(0,.23,.26,1);
+
+    @media screen and (orientation:portrait) {
+        width: 100vh;
+        height:100vw;
+    }
 }
 
 .start-gallery.move-left {

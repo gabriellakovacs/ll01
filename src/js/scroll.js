@@ -12,6 +12,7 @@ $(function() {
         setHeights: false,
         overflowScroll: false,
         scrollbars: false,
+        standardScrollElements: ".js-standard-scroll",
         after:function(index, sections) {
             //ontouchscreen the info panel has an animation to show that the images can be slided
             //this should only happen the first time the info section comes to view

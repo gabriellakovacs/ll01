@@ -1,15 +1,15 @@
 {# CHOOSE RANDOM IMAGE #}
 {% set randomImg = random(images) %}
 
-<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img js-landing-img">
-<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img landing-img-hover js-landing-img">
+<!-- <img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img js-landing-img">
+<img src="{{ randomImg.url }}" alt="{{ randomImg.title }}" class="landing-img landing-img-hover js-landing-img"> -->
 
-{# {% set backgroundImg = 'background-image: url(' ~ randomImg.url ~ ');'  %} #}
+{% include "views/macros/_img-resize_landing.twig" with {
+    'img' : randomImg,
+    'classList': 'landing-img js-landing-img hide-while-loading'
+} %}
 
-<!-- <div class="landing-img" style = "{{ backgroundImg }}">
-  {# TODO: transform image #}
-</div>
-
-<div class="landing-img landing-img-hover" style = "{{ backgroundImg }}">
-  {# TODO: transform image #}
-</div> -->
+{% include "views/macros/_img-resize_landing.twig" with {
+    'img' : randomImg,
+    'classList': 'landing-img landing-img-hover js-landing-img hide-while-loading'
+} %}

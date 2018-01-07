@@ -4,8 +4,3 @@ window.addEventListener('touchstart', function touchDetector() {
   $('body').removeClass('no-touch');
   window.removeEventListener('touchstart', touchDetector);
 });
-
-// window.addEventListener('mousemove', function mouseMoveDetector() {
-//     $('body').removeClass('is-touch');
-//     window.removeEventListener('mousemove', mouseMoveDetector);
-// });
