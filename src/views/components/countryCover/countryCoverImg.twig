@@ -1,5 +1,10 @@
-{% set backgroundImg = 'background-image: url(' ~ img.first().url ~ ');'  %}
+{# {% set backgroundImg = 'background-image: url(' ~ img.first().url ~ ');'  %} #}
+{% set backgroundImg = img.first()  %}
 
-<div class="country-cover-img" style = "{{ backgroundImg }}">
-  {# TODO: transform image #}
-</div>
+<!-- <div class="lazy country-cover-img" style = "{{ backgroundImg }}">
+</div> -->
+
+{% include "views/macros/_img-resize_full.twig" with {
+    'backgroundImg' : backgroundImg,
+    'classList': 'country-cover-img js-img-priority'
+} %}

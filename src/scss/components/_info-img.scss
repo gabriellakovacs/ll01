@@ -16,15 +16,11 @@
 
 
 .info-section--right .info-img {
-  background-image: url("../img/sa_02.jpg");
-
   &.move-out { transform: translateX(100%); }
 }
 
 
 .info-section--left .info-img {
-  background-image: url("../img/sa_03.jpg");
-
   &.move-out { transform: translateX(-100%); }
 }
 

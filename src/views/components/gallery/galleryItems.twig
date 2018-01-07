@@ -13,7 +13,8 @@
     {# FULL ITEMS #}
     {% if item.type == "fullImage" %}
 
-        {% set backgroundImg = 'background-image: url(' ~ item.fullImage.first().url ~ ');'  %}
+        <!-- {% set backgroundImg = 'background-image: url(' ~ item.fullImage.first().url ~ ');'  %} -->
+        {% set backgroundImg = item.fullImage.first() %}
         {% set posX = item.posX | default("center")  %}
         {% set posY = item.posY | default("center")  %}
         {% set backgroundPos = 'background-position: ' ~ posX ~ ' ' ~ posY  ~ ';' %}
@@ -22,7 +23,12 @@
             class="gallery-item gallery-item--full js-galleryItem js-galleryItem--full {{ classIndicatingBackground }}"
             data-type="full{{ backgroundShade|capitalize }}"
         >
-          <div class="lazy gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
+          <!-- <div class="lazy gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div> -->
+          {% include "views/macros/_img-resize_full.twig" with {
+              'backgroundImg' : backgroundImg,
+              'backgroundPos' : backgroundPos,
+              'classList': 'gallery-image js-galleryImage js-img-secondary'
+          } %}
         </div>
 
         {% set prevWasHalf = false %}
@@ -38,9 +44,11 @@
             {% set prevWasHalf = true %}
         {% endif %}
 
+        {# HALF IMAGE #}
         {% if item.type == "halfImage" %}
 
-            {% set backgroundImg = 'background-image: url(' ~ item.halfImage.first().url ~ ');'  %}
+            <!-- {% set backgroundImg = 'background-image: url(' ~ item.halfImage.first().url ~ ');'  %} -->
+            {% set backgroundImg = item.halfImage.first() %}
             {% set posX = item.posX | default("center")  %}
             {% set posY = item.posY | default("center")  %}
             {% set backgroundPos = 'background-position: ' ~ posX ~ ' ' ~ posY ~ ';' %}
@@ -62,9 +70,15 @@
                 class="gallery-item gallery-item--half gallery-item--half--{{ side }} js-galleryItem {{ classIndicatingBackground }}{{ beforeText }}"
                 data-type="half{{ side|capitalize }}{{ backgroundShade|capitalize }}"
             >
-              <div class="lazy gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div>
+              <!-- <div class="gallery-image js-galleryImage" style = "{{ backgroundImg }}{{ backgroundPos }}"></div> -->
+              {% include "views/macros/_img-resize_half.twig" with {
+                  'backgroundImg' : backgroundImg,
+                  'backgroundPos' : backgroundPos,
+                  'classList': 'gallery-image js-galleryImage js-img-secondary'
+              } %}
             </div>
 
+        {# HALF TEXT #}
         {% elseif item.type == "text" %}
 
             <div

@@ -1,0 +1,39 @@
+{% set s = {
+    width: 190,
+    quality: 100,
+} %}
+
+{% set m = {
+    width: 380,
+    quality: 100,
+} %}
+
+{% set l = {
+    width: 712,
+    quality: 100,
+} %}
+
+{% set xl = {
+    width: 1425,
+    quality: 100,
+} %}
+
+{% set xxl = {
+    width: 1900,
+    quality: 100,
+} %}
+
+{% set xxxl = {
+    width: 3000,
+    quality: 100,
+} %}
+
+<div class="{{ classList }}"
+     style = "{{ backgroundPos }}"
+     data-bkcgrnd-s="{{ backgroundImg.getUrl(s) }}"
+     data-bkcgrnd-m="{{ backgroundImg.getUrl(m) }}"
+     data-bkcgrnd-l="{{ backgroundImg.getUrl(l) }}"
+     data-bkcgrnd-xl="{{ backgroundImg.getUrl(xl) }}"
+     data-bkcgrnd-xxl="{{ backgroundImg.getUrl(xxl) }}"
+     data-bkcgrnd-xxxl="{{ backgroundImg.getUrl(xxxl) }}"
+></div>

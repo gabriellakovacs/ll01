@@ -4,6 +4,10 @@
   bottom: calc(#{$sideSpacing} + #{$sectionBorderW});
   left: $sideSpacing;
   height: calc(100vh - 1.2 * #{$landing-font-size} + #{$sectionBorderW});
+
+  @media screen and (orientation:portrait) {
+    height: calc(100vw - 1.2 * #{$landing-font-size--portrait} + #{$sectionBorderW});
+  }
 }
 
 
