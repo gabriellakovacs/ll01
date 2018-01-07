@@ -14,7 +14,7 @@
   left: 0;
   width: 50%;
   height: 0;
-  cursor: url('../img/cursor/galleryPrevSmall.png') 1 30, url('../img/cursor/galleryPrevSmall.cur'), pointer;
+  cursor: url('../img/cursor/galleryPrevSmall.png') 1 30, pointer;
   opacity: 0;
 
   &.white-cursor {
@@ -31,7 +31,7 @@
   right: 0;
   width: 50%;
   height: 0;
-  cursor: url('../img/cursor/galleryNextSmall.png') 34 30, url('../img/cursor/galleryNextSmall.cur'), pointer;
+  cursor: url('../img/cursor/galleryNextSmall.png') 34 30, pointer;
   opacity: 0;
 
   &.white-cursor {
@@ -43,6 +43,18 @@
 
 
 .ie {
+    .galleryPrev {
+      cursor: url('assets/img/cursor/galleryPrevSmall.cur'), pointer;
+    }
+
+
+    .galleryNext {
+      cursor: url('assets/img/cursor/galleryNextSmall.cur'), pointer;
+    }
+}
+
+
+.edge {
     .galleryPrev {
       cursor: url('../img/cursor/galleryPrevSmall.cur'), pointer;
     }

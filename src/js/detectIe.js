@@ -19,7 +19,7 @@
 
 
   if (edge > 0) {
-    body.classList.add('ie');
+    body.classList.add('edge');
   }
 
   return false;
